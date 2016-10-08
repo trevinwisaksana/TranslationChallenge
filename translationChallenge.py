@@ -2,7 +2,7 @@
 import httplib2
 # Included so that we don't have to add ASCII to add spaces
 import urllib
-# This converts
+# For conversion of HTMl into JSON
 import json
 
 '''
@@ -28,7 +28,7 @@ def translate(arrayOfText, language):
         # This is the text that will be translated
         ''' Key has to be included in the URL so that we can get permission to
             be granted '''
-        GOOGLE_API_KEY = "AIzaS"
+        GOOGLE_API_KEY = "AIzaSy"
         TRANSLATE_URL = 'https://www.googleapis.com/language/translate/v2'
         partial_url = TRANSLATE_URL + '?key=' + GOOGLE_API_KEY + '&source=en&target=' + language
 
@@ -75,13 +75,3 @@ def translate(arrayOfText, language):
 
         # Returns the outputArray which ends the for loop to end the function
         return outputArray
-
-# Tests
-test_input = ["Hello who is this", "This is not human", "keep adding text!"]
-test_output = translate(test_input, 'de')
-
-# print(test_input)
-# print(test_output)
-
-# print(test_input[0] + " translates to " + test_output[0])
-# print(test_input[1] + " translates to " + test_output[1])
