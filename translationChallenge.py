@@ -28,7 +28,7 @@ def translate(arrayOfText, language):
         # This is the text that will be translated
         ''' Key has to be included in the URL so that we can get permission to
             be granted '''
-        GOOGLE_API_KEY = "AIzaSy"
+        GOOGLE_API_KEY = "AIzaSyC0XYY3AWKWKQlQbwm1mzI0-K4_CoFCCrk"
         TRANSLATE_URL = 'https://www.googleapis.com/language/translate/v2'
         partial_url = TRANSLATE_URL + '?key=' + GOOGLE_API_KEY + '&source=en&target=' + language
 

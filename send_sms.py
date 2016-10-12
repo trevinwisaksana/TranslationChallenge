@@ -10,8 +10,8 @@ def sendMessage(arrayOfTranslatedText):
 
     for text in arrayOfTranslatedText:
         # Account SID and Token from Twilio's website
-        account_sid = "ACabf12d"
-        auth_token = "e060a27e"
+        account_sid = "ACabf12db90a28a0be407bd13112d43ec2"
+        auth_token = "e060a27eed47fc6c13d4e91f321b4d66"
 
         # Creating a client with the SID and Token
         # TwilioRestClient is a function that takes two arguments: account_sid and auth_token
@@ -28,16 +28,14 @@ def sendMessage(arrayOfTranslatedText):
                 contains a list of the return values from the
                 translate function. """
             message = client.messages.create(to=receiver, from_=sender, body=txt)
-        except TwilioRestException as Error:
+        except TwilioRestException as error:
             print("Error: Your message cannot be sent.")
+            print(error)
             break
-
-    return message.sid
 
 ''' translatedTexts is an array of strings as the function translate will
     return two strings '''
-translatedTexts = translate(["Hello my name is Cow", "Who are you?",
-                             "You loser!", "You shall not pass!"], 'de')
+translatedTexts = translate(["What other languages can you speak?"], 'ar')
 
 # Calling the function for test
 sendMessage(translatedTexts)
